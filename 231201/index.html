@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../subhalo/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -201,6 +201,50 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../subhalo/" class="md-nav__link">
+        研究に用いるsubhalo一覧
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          進捗報告
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          進捗報告
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
     
   
   
@@ -272,7 +316,7 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    困っていること
+    ビリアル質量をどうやって導出するか
   </a>
   
 </li>
@@ -281,6 +325,13 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -347,7 +398,7 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    困っていること
+    ビリアル質量をどうやって導出するか
   </a>
   
 </li>
@@ -371,11 +422,11 @@
 <h2 id="_1">前回 (研究室ミーティング)</h2>
 <p><a href="231127_nishihamav2.pdf">231127_nishihamav2.pdf</a></p>
 <ul>
-<li><span class="arithmatex">\(R_{200}\)</span> を導出できた</li>
+<li>ビリアル半径 <span class="arithmatex">\(R_{200}\)</span> を導出できた</li>
 </ul>
 <ul>
 <li>
-<p>Illustrisと自分のSubhalo Massに違いがあった</p>
+<p>ビリアル半径を導出するのに使ったIllustrisと自分のSubhalo Massに違いがあった</p>
 <table>
 <thead>
 <tr>
@@ -385,11 +436,14 @@
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\(76.12 \times 10^{10} M_\odot\)</span></td>
-<td><span class="arithmatex">\(57.85 \times 10^{10} M_\odot\)</span></td>
+<td><span class="arithmatex">\(76.12 \quad (10^{10} M_\odot)\)</span></td>
+<td><span class="arithmatex">\(57.85 \quad (10^{10} M_\odot)\)</span></td>
 </tr>
 </tbody>
 </table>
+<ul>
+<li>2倍近くの差がある</li>
+</ul>
 </li>
 </ul>
 <h2 id="_2">貰ったアドバイス</h2>
@@ -408,12 +462,17 @@
 </ul>
 <h4 id="subhalo-mass2subhalo">Subhalo Massが2倍の差があるけど、他のsubhaloも？</h4>
 <ul>
-<li>他のsubhaloも2倍の差があるとはいえない<img alt="fr" src="fr.png" /></li>
+<li>他のsubhaloも2倍の差があるとはいえない<img alt="image-20231129224901262" src="image-20231129224901262.png" /></li>
 <li>相関係数：0.53</li>
+<li>Subhalo個数：127</li>
 </ul>
-<h2 id="_3">困っていること</h2>
+<h2 id="_3">ビリアル質量をどうやって導出するか</h2>
 <ul>
-<li>ビリアル質量をどうやって導出するか。</li>
+<li>ひとまずデータの抽出に欠陥が無いといえる「subhalo342447」のみを考える。</li>
+<li>銀河中心からの距離に対する質量累積和の変化は以下の通りであると仮定する。<img alt="image-20231129225941857" src="image-20231129225941857.png" /></li>
+</ul>
+<ul>
+<li>この関数の形のままスケールアップする。</li>
 </ul>
 
 
@@ -426,11 +485,6 @@
           
           
         </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
-            ページトップへ戻る
-          </button>
         
       </main>
       
@@ -452,7 +506,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.", "navigation.expand"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
     
     
       <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
