@@ -15,7 +15,7 @@
     
     
       
-        <title>案１の結果 - res2023-web</title>
+        <title>Fitting Model: Neural Rate Models - res2023-web</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1" class="md-skip">
+        <a href="#fitting-model-neural-rate-models" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              案１の結果
+              Fitting Model: Neural Rate Models
             
           </span>
         </div>
@@ -247,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../231204/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         23.12.04 研究室ミーティング
       </a>
     </li>
@@ -261,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../231201/" class="md-nav__link">
         23.12.01 銀河団ミーティング
       </a>
     </li>
@@ -302,15 +302,48 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fitting-a1-exp-xb" class="md-nav__link">
-    Fittingモデル \(a*(1 - \exp( - x/b))\)
+  <a href="#1" class="md-nav__link">
+    結果１
   </a>
+  
+    <nav class="md-nav" aria-label="結果１">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    パラメータ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fitting-a1-exp-x-bc" class="md-nav__link">
-    Fittingモデル \(a*(1 - \exp( - (x-b)/c))\)
+  <a href="#2" class="md-nav__link">
+    結果２
+  </a>
+  
+    <nav class="md-nav" aria-label="結果２">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    パラメータ
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    このモデルを使って…
   </a>
   
 </li>
@@ -330,11 +363,58 @@
                   
 
 
-<h1 id="1">案１の結果</h1>
-<h3 id="fitting-a1-exp-xb">Fittingモデル <span class="arithmatex">\(a*(1 - \exp( - x/b))\)</span></h3>
-<p><img alt="image-20231201104142639" src="../image-20231201104142639.png" /></p>
-<h3 id="fitting-a1-exp-x-bc">Fittingモデル <span class="arithmatex">\(a*(1 - \exp( - (x-b)/c))\)</span></h3>
-<p><img alt="image-20231201104237651" src="../image-20231201104237651.png" /></p>
+<h1 id="fitting-model-neural-rate-models">Fitting Model: Neural Rate Models</h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Neural Rate Modelsとは？</strong></p>
+<p>Neural Rate Modelsは、神経細胞の発火率をモデル化する方法です。このモデルは、神経細胞の発火率が、その細胞の入力に対する応答としてどのように変化するかを説明することができます。</p>
+<p><img alt="image-20231201131355102" src="../image-20231201131355102.png" /></p>
+<ul>
+<li>脳内のニューラルネットワークの活動は、時間を追うごとに常に変化している</li>
+<li>そのため、ニューロンは動的なシステムとしてモデリングすることができる (但し、動的システムを用いるアプローチは、神経科学において用いられるものの一つのアプローチに過ぎない)</li>
+<li>Neural Rate Modelsは、その中でもニューロンを集団として捉え、その集団の発火率を用いることで、最も単純な形で動的なネットワーク活動を表現するモデルである</li>
+<li>ニューロン集団の発火率と、その集団への入力の関係性を分析する際に、F-Iカーブがよく用いられる(F：スパイク頻度(spike frequency) I：外部からの電流(injected current))</li>
+<li>F-I curveの中でもsigmoidal F-I curveは以下のような数式で表現される:</li>
+</ul>
+<div class="arithmatex">\[
+c \left\{ \frac{1}{1 + \exp(-a(x-b))} - \frac{1}{1 + \exp(ab)} \right\}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(c\)</span> を追加．</li>
+<li>参考文献<ul>
+<li><a href="https://qiita.com/shionhonda/items/bf7194c3fa1412755a4c">2021年の深層学習ハイライト（研究論文編）– Qiita</a></li>
+<li><a href="https://compneuro.neuromatch.io/tutorials/W2D4_DynamicNetworks/student/W2D4_Tutorial1.html">Tutorial 1: Neural Rate Models — Neuromatch Academy: Computational Neuroscience</a></li>
+<li><a href="https://note.com/minaiyuki/n/n35717c80e440">Neuromatch Academy 2021(US時間)の体験談(Week2編) – note</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="1">結果１</h2>
+<p><img alt="image-20231201121828247" src="../image-20231201121828247.png" /></p>
+<h3 id="_1">パラメータ</h3>
+<ul>
+<li><span class="arithmatex">\(a\)</span> : 3.022±0.001e-02</li>
+<li><span class="arithmatex">\(b\)</span> : 7.238±0.001e+01</li>
+<li><span class="arithmatex">\(c\)</span> : 6.732±0.001e+01</li>
+<li><span class="arithmatex">\(\chi^2\)</span> : 70335.21 / ndof : 977792 (自由度)<ul>
+<li><span class="arithmatex">\(\chi^2 \leq d\)</span></li>
+</ul>
+</li>
+</ul>
+<h2 id="2">結果２</h2>
+<p>c = 63に指定。</p>
+<p><img alt="image-20231204110309093" src="../image-20231204110309093.png" /></p>
+<h3 id="_2">パラメータ</h3>
+<ul>
+<li><span class="arithmatex">\(a\)</span> : 3.400±0.001e-02</li>
+<li><span class="arithmatex">\(b\)</span> : 7.126±0.001e+01</li>
+<li><span class="arithmatex">\(\chi^2\)</span> : 72502.49 / ndof : 977793<ul>
+<li><span class="arithmatex">\(\chi^2 \leq d\)</span></li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">このモデルを使って…</h2>
+<p><img alt="image-20231204122521063" src="../image-20231204122521063.png" /></p>
 
 
 

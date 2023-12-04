@@ -15,7 +15,7 @@
     
     
       
-        <title>案１の結果 - res2023-web</title>
+        <title>Fitting Model: the standard model - res2023-web</title>
       
     
     
@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1" class="md-skip">
+        <a href="#fitting-model-the-standard-model" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              案１の結果
+              Fitting Model: the standard model
             
           </span>
         </div>
@@ -247,7 +247,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../231204/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         23.12.04 研究室ミーティング
       </a>
     </li>
@@ -261,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../" class="md-nav__link">
+      <a href="../../231201/" class="md-nav__link">
         23.12.01 銀河団ミーティング
       </a>
     </li>
@@ -302,16 +302,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fitting-a1-exp-xb" class="md-nav__link">
-    Fittingモデル \(a*(1 - \exp( - x/b))\)
+  <a href="#1" class="md-nav__link">
+    結果１
+  </a>
+  
+    <nav class="md-nav" aria-label="結果１">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    パラメータ
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#fitting-a1-exp-x-bc" class="md-nav__link">
-    Fittingモデル \(a*(1 - \exp( - (x-b)/c))\)
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -330,11 +336,35 @@
                   
 
 
-<h1 id="1">案１の結果</h1>
-<h3 id="fitting-a1-exp-xb">Fittingモデル <span class="arithmatex">\(a*(1 - \exp( - x/b))\)</span></h3>
-<p><img alt="image-20231201104142639" src="../image-20231201104142639.png" /></p>
-<h3 id="fitting-a1-exp-x-bc">Fittingモデル <span class="arithmatex">\(a*(1 - \exp( - (x-b)/c))\)</span></h3>
-<p><img alt="image-20231201104237651" src="../image-20231201104237651.png" /></p>
+<h1 id="fitting-model-the-standard-model">Fitting Model: the standard model</h1>
+<p>論文 (<a href="https://academic.oup.com/pasj/article/66/5/99/2337757">Nobuhiro Okabe et al., PASJ, 2014</a>) で用いられているモデル。</p>
+<p><img src="../image-20231201143859412.png" alt="image-20231201143859412" style="width: 400px;" /></p>
+<p>両対数グラフで</p>
+<div class="arithmatex">\[
+y = x^a (1 + x^b)^{-\frac{a}{b}}
+\]</div>
+<p><span class="arithmatex">\(\log x = X-c\)</span>，<span class="arithmatex">\(\log y = Y\)</span> として <span class="arithmatex">\(X, \ Y\)</span> の関係式を導くと</p>
+<div class="arithmatex">\[
+Y = a(X-c) - \frac{b}{a} \log\left( 1 + (e^{(x-c)})^b \right)
+\]</div>
+<p>となる．</p>
+<h2 id="1">結果１</h2>
+<p><img alt="image-20231204001553951" src="../image-20231204001553951.png" /></p>
+<h3 id="_1">パラメータ</h3>
+<ul>
+<li><span class="arithmatex">\(a\)</span> : 0.388±0.004</li>
+<li><span class="arithmatex">\(b\)</span> : 0.074±0.010</li>
+<li><span class="arithmatex">\(c\)</span> : 4.129±0.017</li>
+<li><span class="arithmatex">\(\chi^2\)</span> : 328818.05  / ndof 977792<ul>
+<li><span class="arithmatex">\(\chi^2 \leq d\)</span></li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>適切にモデルフィットできていない。</p>
+<p>もう少し考える必要あり。</p>
+</div>
 
 
 
