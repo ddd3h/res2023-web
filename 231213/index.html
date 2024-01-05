@@ -9,17 +9,13 @@
       
       
       
-        <link rel="prev" href="../240110/">
-      
-      
-        <link rel="next" href="../231201/">
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
     
     
       
-        <title>23.12.04 研究室ミーティング - res2023-web</title>
+        <title>23.12.13 銀河団ミーティング - res2023-web</title>
       
     
     
@@ -67,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#231204" class="md-skip">
+        <a href="#231213" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -102,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              23.12.04 研究室ミーティング
+              23.12.13 銀河団ミーティング
             
           </span>
         </div>
@@ -233,16 +229,16 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
       
       
       
@@ -251,7 +247,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           進捗報告
@@ -276,73 +272,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          23.12.04 研究室ミーティング
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../231204/" class="md-nav__link">
         23.12.04 研究室ミーティング
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    前回 (銀河団ミーティング)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fitting-models" class="md-nav__link">
-    Fitting Models
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subhalo-mass" class="md-nav__link">
-    Subhalo Massの修正
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#to-do" class="md-nav__link">
-    To Do
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -474,29 +408,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    前回 (銀河団ミーティング)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fitting-models" class="md-nav__link">
-    Fitting Models
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#subhalo-mass" class="md-nav__link">
-    Subhalo Massの修正
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#to-do" class="md-nav__link">
-    To Do
+  <a href="#comment" class="md-nav__link">
+    Comment
   </a>
   
 </li>
@@ -516,73 +429,35 @@
                   
 
 
-<h1 id="231204">23.12.04 研究室ミーティング</h1>
-<h2 id="_1">前回 (銀河団ミーティング)</h2>
+<h1 id="231213">23.12.13 銀河団ミーティング</h1>
+<h2 id="comment">Comment</h2>
 <ul>
-<li>ビリアル半径 <span class="arithmatex">\(R_{200}\)</span> を導出できた</li>
+<li>Nelsonのrandomをやってみよう。</li>
 </ul>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># make a random edge on view</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">psi</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="n">A_00</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">A_01</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">A_02</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="n">A_10</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">A_11</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">A_12</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">A_20</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="n">A_21</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">A_22</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="n">random_edgeon_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">matrix</span><span class="p">(</span> <span class="p">((</span><span class="n">A_00</span><span class="p">,</span> <span class="n">A_01</span><span class="p">,</span> <span class="n">A_02</span><span class="p">),</span> <span class="p">(</span><span class="n">A_10</span><span class="p">,</span> <span class="n">A_11</span><span class="p">,</span> <span class="n">A_12</span><span class="p">),</span> <span class="p">(</span><span class="n">A_20</span><span class="p">,</span> <span class="n">A_21</span><span class="p">,</span> <span class="n">A_22</span><span class="p">))</span> <span class="p">)</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">r</span><span class="p">[</span><span class="s1">&#39;edge-on-random&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">random_edgeon_matrix</span> <span class="o">*</span> <span class="n">r</span><span class="p">[</span><span class="s1">&#39;face-on&#39;</span><span class="p">]</span>
+</span></code></pre></div>
+ <a href="https://www.tng-project.org/data/forum/topic/223/subhalo-face-on-vector-values/">外部リンク</a></p>
 <ul>
-<li>
-<p>ビリアル半径を導出するのに使ったIllustrisと自分のSubhalo Massに違いがあった</p>
-<table>
-<thead>
-<tr>
-<th>Illustris</th>
-<th>自分</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex">\(76.12 \quad (10^{10} M_\odot)\)</span></td>
-<td><span class="arithmatex">\(57.85 \quad (10^{10} M_\odot)\)</span></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>2倍近くの差がある</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>
-<p>解決方法の案</p>
-<ul>
-<li>銀河中心からの距離に対する質量累積和の変化は以下の通りであると仮定する。
-<img alt="image-20231201123543222" src="image-20231201123543222.png" /></li>
-<li>Fitting Modelの検討中</li>
-</ul>
-</li>
-</ul>
-<h2 id="fitting-models">Fitting Models</h2>
-<ul>
-<li><a href="f_result/">Models that failed to fit</a></li>
-<li><a href="result1/">Fitting Model: Neural Rate Models</a>　★</li>
-<li><a href="result2/">Fitting Model: the standard model</a></li>
-<li><a href="result3/">Fitting Model: the spline curve</a></li>
-</ul>
-<h2 id="subhalo-mass">Subhalo Massの修正</h2>
-<p>今回は<a href="result1/">Fitting Model: Neural Rate Models</a>を使用する。</p>
-<p>IllustrisのSubhaloに規格化してみる。</p>
-<p><img alt="" src="image-20231204122521063.png" /></p>
-<ul>
-<li>Virial radius 200 : <ul>
-<li>178.2951 kpc → 194.9481 kpc</li>
-</ul>
-</li>
-</ul>
-<p><img alt="image-20231204180043461" src="image-20231204180043461.png" /></p>
-<div class="admonition success">
-<p class="admonition-title">Success</p>
-<p>論文と同じ図が作成できた？
-<img alt="image-20231204135341343" src="image-20231204135341343.png" />
-a solar abundance table of Asplund et al. (2009).</p>
-</div>
-<h2 id="to-do">To Do</h2>
-<ul>
-<li>Outflowを取り組む<ul>
-<li><a href="../pdf/231127_nishihamav2.pdf">231127_nishihamav2.pdf</a></li>
-</ul>
-</li>
+<li>ビリアル半径（もしくはx2ぐらい？）で切ってoutflowを見てみる</li>
+<li>なぜ左から右に流されているのは、もしかしたら近くに大きな何かがある？→大きくプロットしてみる。</li>
 </ul>
 
 
