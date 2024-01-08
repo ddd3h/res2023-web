@@ -424,6 +424,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#version-3" class="md-nav__link">
+    version 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-4" class="md-nav__link">
+    version 4
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -492,6 +506,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#version-3" class="md-nav__link">
+    version 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-4" class="md-nav__link">
+    version 4
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -515,9 +543,10 @@
 <h1 id="_1">データの抽出時間をいかに短くするか</h1>
 <p>Illustris-TNGのファイルの合計容量は <span class="arithmatex">\(z=0\)</span> のメインのSnapshotにおいて、2.7 TBあり、銀河や銀河団を分類するデータGroupcatでさえ5.9 GBもある。</p>
 <p>それぞれの粒子はHDF5 (<a href="https://ja.wikipedia.org/wiki/Hierarchical_Data_Format"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span> Hierarchical Data Format – Wikipedia</a>) に格納され、粒子の種類に応じて物理量が格納されている。</p>
-<p><img alt="image-20240105154006397" src="../image-20240105154006397.png" /></p>
+<p><img alt="" src="Screenshot%202024-01-09%20at%201.46.18.png" /></p>
 <p>これらの物理量を用いて抽出・解析を行う。つまり２段階のプロセスが存在するのである。１段階目のプロセスと２段階目のプロセスを分けることで効率化、高速化を実現を行う。</p>
 <h2 id="extracting">抽出 (extracting)</h2>
+<h3 id="version-1">Version 1</h3>
 <p>まずとりあえず、今回必要なデータは</p>
 <ul>
 <li>Coordinates (Dims=(N,3))</li>
@@ -525,14 +554,70 @@
 <li>Masses (Dims=N)</li>
 </ul>
 <p>のみを取り出す。</p>
-<h3 id="version-1">Version 1</h3>
 <p><pre class="mermaid"><code>flowchart LR
-a1[HDF5から抽出]--&gt;a2[Chunkファイルごとに\nNPZ保存]--&gt;a3[NPZからsubhaloの\nvirial半径のみを抽出]</code></pre>
+  a0[snap_099.0&lt;b&gt;.hdf5&lt;/b&gt;]--Convert--&gt;b0[CMVonly_099.0&lt;b&gt;.npz&lt;/b&gt;]
+  a1[snap_099.1&lt;b&gt;.hdf5&lt;/b&gt;]--Convert--&gt;b1[CMVonly_099.1&lt;b&gt;.npz&lt;/b&gt;]
+  a*[snap_099.*&lt;b&gt;.hdf5&lt;/b&gt;]--Convert--&gt;b*[CMVonly_099.*&lt;b&gt;.npz&lt;/b&gt;]
+  c[CMVonly&lt;b&gt;.npz&lt;/b&gt;]
+  d{{Using}}
+  b0--Extract--&gt;c
+  b1--Extract--&gt;c
+  b*--Extract--&gt;c
+  c--&gt;d
+</code></pre>
 HDF5から抽出したら直ちにNPZファイルにして保存し、メモリを開放することで使用メモリを最小限にしている。</p>
 <p>ただし最終的に保存したNPZファイルすべてを参照するため、メモリを爆食いしているわけでないかもしれない。</p>
-<p><a href="../code-ex_all.py/">コード</a></p>
+<p><a href="code-ex_all.py/">コード</a></p>
+<p><a href="code-cutoff.jl/">コード</a></p>
 <h3 id="version-2">Version 2</h3>
-<p><a href="../code-cutoff.jl/">コード</a></p>
+<p>ChunkファイルごとにHDF5からNPZファイルに変換を行い、特定のSubhaloにカットを行う作業をしてきたが、これを一括でJuliaで行い、さらに並列計算を行った。</p>
+<p>いままではPython(変換)+Julia(抽出)で時間が1時間超ほどだった。</p>
+<pre class="mermaid"><code>flowchart LR
+  a0[snap_099.0&lt;b&gt;.hdf5&lt;/b&gt;]
+  a1[snap_099.1&lt;b&gt;.hdf5&lt;/b&gt;]
+  a*[snap_099.*&lt;b&gt;.hdf5&lt;/b&gt;]
+  c[CMVonly&lt;b&gt;.npz&lt;/b&gt;]
+  d{{Using}}
+  a0--Convert/Extract--&gt;c
+  a1--Convert/Extract--&gt;c
+  a*--Convert/Extract--&gt;c
+  c--&gt;d</code></pre>
+<p><a href="code-cutoff2.jl/">コード</a></p>
+<p><img alt="GDU2YPSWoAIqoNN" src="GDU2YPSWoAIqoNN.png" /></p>
+<h3 id="version-3">version 3</h3>
+<pre class="mermaid"><code>flowchart LR
+  a0[snap_099.0&lt;b&gt;.hdf5&lt;/b&gt;]
+  a1[snap_099.1&lt;b&gt;.hdf5&lt;/b&gt;]
+  a*[snap_099.*&lt;b&gt;.hdf5&lt;/b&gt;]
+  c[AllData&lt;b&gt;.npz&lt;/b&gt;]
+  d{{Using}}
+  a0--Convert--&gt;c
+  a1--Convert--&gt;c
+  a*--Convert--&gt;c
+  c--Extract--&gt; d</code></pre>
+<h3 id="version-4">version 4</h3>
+<pre class="mermaid"><code>flowchart LR
+  a0[snap_099.0&lt;b&gt;.hdf5&lt;/b&gt;]
+  a1[snap_099.1&lt;b&gt;.hdf5&lt;/b&gt;]
+  a*[snap_099.*&lt;b&gt;.hdf5&lt;/b&gt;]
+  b0[snap_099_xsorted.0&lt;b&gt;.npz&lt;/b&gt;]
+  b1[snap_099_xsorted.1&lt;b&gt;.npz&lt;/b&gt;]
+  b*[snap_099_xsorted.*&lt;b&gt;.npz&lt;/b&gt;]
+
+  subgraph Prepare
+    a0--Sort/Convert--&gt;b0
+    a1--Sort/Convert--&gt;b1
+    a*--Sort/Convert--&gt;b*
+  end
+
+  c[Mapping File]
+  d{{Using}}
+
+  b0--Extract--&gt;d
+  b1--Extract--&gt;d
+  b*--Extract--&gt;d
+
+  c--&gt; d</code></pre>
 
 
 
