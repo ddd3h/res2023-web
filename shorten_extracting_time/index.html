@@ -595,29 +595,78 @@ HDF5から抽出したら直ちにNPZファイルにして保存し、メモリ�
   a1--Convert--&gt;c
   a*--Convert--&gt;c
   c--Extract--&gt; d</code></pre>
+<p>さらにConvert部分の高速化を測るために次のようにプログラムを改良した。</p>
+<pre class="mermaid"><code>flowchart TD
+
+t1{{"@threads"}}
+t2{{"@threads"}}
+t*{{"@threads"}}
+
+i1["i=1"]
+i3["i=*"]
+
+a1[get Coordinates]
+a3[get Coordinates]
+
+b1[get Velocities]
+b3[get Velocities]
+
+c1[get GFM_Metals]
+c3[get GFM_Metals]
+
+D["DATA"]
+
+t1--&gt;i1
+t1--&gt;i3
+
+subgraph for
+  i1--&gt;t2
+  i3--&gt;t*
+
+  subgraph "get_data(1)"
+    t2--&gt;a1
+    t2--&gt;b1
+    t2--&gt;c1
+  end
+
+  subgraph "get_data(*)"
+    t*--&gt;a3
+    t*--&gt;b3
+    t*--&gt;c3
+  end
+end
+
+a1--&gt;D
+a3--&gt;D
+b1--&gt;D
+b3--&gt;D
+c1--&gt;D
+c3--&gt;D
+</code></pre>
+<p>メモリ不足で強制終了。</p>
 <h3 id="version-4">version 4</h3>
 <pre class="mermaid"><code>flowchart LR
   a0[snap_099.0&lt;b&gt;.hdf5&lt;/b&gt;]
   a1[snap_099.1&lt;b&gt;.hdf5&lt;/b&gt;]
   a*[snap_099.*&lt;b&gt;.hdf5&lt;/b&gt;]
-  b0[snap_099_xsorted.0&lt;b&gt;.npz&lt;/b&gt;]
-  b1[snap_099_xsorted.1&lt;b&gt;.npz&lt;/b&gt;]
-  b*[snap_099_xsorted.*&lt;b&gt;.npz&lt;/b&gt;]
-
-  subgraph Prepare
-    a0--Sort/Convert--&gt;b0
-    a1--Sort/Convert--&gt;b1
-    a*--Sort/Convert--&gt;b*
-  end
 
   c[Mapping File]
   d{{Using}}
 
-  b0--Extract--&gt;d
-  b1--Extract--&gt;d
-  b*--Extract--&gt;d
+  subgraph Preparation
+    a0--Random Extract--&gt;c
+    a1--Random Extract--&gt;c
+    a*--Random Extract--&gt;c
+  end
 
-  c--&gt; d</code></pre>
+
+
+  a0--Extract--&gt;d
+  a1--Extract--&gt;d
+  a*--Extract--&gt;d
+
+  c--&gt; d
+  Preparation--&gt;c</code></pre>
 
 
 
