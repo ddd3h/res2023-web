@@ -1,0 +1,656 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Nextone - res2023-web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="res2023-web" class="md-header__button md-logo" aria-label="res2023-web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            res2023-web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Nextone
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="res2023-web" class="md-nav__button md-logo" aria-label="res2023-web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    res2023-web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        ホーム
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../subhalo/" class="md-nav__link">
+        研究に用いるsubhalo一覧
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ddd3h/res2023-tex" class="md-nav__link">
+        卒論データ(GitHub)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          進捗報告
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          進捗報告
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../240110/" class="md-nav__link">
+        24.01.10 銀河団ミーティング
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../231204/" class="md-nav__link">
+        23.12.04 研究室ミーティング
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../231201/" class="md-nav__link">
+        23.12.01 銀河団ミーティング
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          コード関連
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          コード関連
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LINEnotify/" class="md-nav__link">
+        解析時間が長いので解析終了をLINEで通知させる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autobackup/" class="md-nav__link">
+        毎日自動バックアップを行い完了時にLINEに通知させる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shorten_extracting_time/" class="md-nav__link">
+        データの抽出時間をいかに短くするか
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Nextone</h1>
+
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">TNG_catcher</span> <span class="kn">import</span> <span class="o">*</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">TNG_catcher.New</span> <span class="kn">import</span> <span class="o">*</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>The following modules installed.
+    - import illustris_python as il
+    - import numpy as np
+    - import pandas as pd
+    - import os
+    - import matplotlib.pyplot as plt
+    - from matplotlib.colors import LogNorm
+    - import glob
+</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">test</span> <span class="o">=</span> <span class="n">SubhaloDataSet</span><span class="p">(</span><span class="mi">372754</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">test</span><span class="o">.</span><span class="n">GetAllData</span><span class="p">()</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">x</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">DATA</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">y</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">DATA</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">z</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">DATA</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;z&quot;</span><span class="p">]</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">m</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">DATA</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;Masses&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">hist2d</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">301</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="n">m</span><span class="p">,</span><span class="n">norm</span><span class="o">=</span><span class="n">LogNorm</span><span class="p">())</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>(array([[0., 0., 0., ..., 0., 0., 0.],
+        [0., 0., 0., ..., 0., 0., 0.],
+        [0., 0., 0., ..., 0., 0., 0.],
+        ...,
+        [0., 0., 0., ..., 0., 0., 0.],
+        [0., 0., 0., ..., 0., 0., 0.],
+        [0., 0., 0., ..., 0., 0., 0.]]),
+ array([21068.0534648 , 21071.55374394, 21075.05402309, 21078.55430223,
+        21082.05458138, 21085.55486052, 21089.05513966, 21092.55541881,
+        21096.05569795, 21099.55597709, 21103.05625624, 21106.55653538,
+        21110.05681452, 21113.55709367, 21117.05737281, 21120.55765195,
+        21124.0579311 , 21127.55821024, 21131.05848938, 21134.55876853,
+        21138.05904767, 21141.55932681, 21145.05960596, 21148.5598851 ,
+        21152.06016424, 21155.56044339, 21159.06072253, 21162.56100167,
+        21166.06128082, 21169.56155996, 21173.0618391 , 21176.56211825,
+        21180.06239739, 21183.56267654, 21187.06295568, 21190.56323482,
+        21194.06351397, 21197.56379311, 21201.06407225, 21204.5643514 ,
+        21208.06463054, 21211.56490968, 21215.06518883, 21218.56546797,
+        21222.06574711, 21225.56602626, 21229.0663054 , 21232.56658454,
+        21236.06686369, 21239.56714283, 21243.06742197, 21246.56770112,
+        21250.06798026, 21253.5682594 , 21257.06853855, 21260.56881769,
+        21264.06909683, 21267.56937598, 21271.06965512, 21274.56993426,
+        21278.07021341, 21281.57049255, 21285.0707717 , 21288.57105084,
+        21292.07132998, 21295.57160913, 21299.07188827, 21302.57216741,
+        21306.07244656, 21309.5727257 , 21313.07300484, 21316.57328399,
+        21320.07356313, 21323.57384227, 21327.07412142, 21330.57440056,
+        21334.0746797 , 21337.57495885, 21341.07523799, 21344.57551713,
+        21348.07579628, 21351.57607542, 21355.07635456, 21358.57663371,
+        21362.07691285, 21365.57719199, 21369.07747114, 21372.57775028,
+        21376.07802942, 21379.57830857, 21383.07858771, 21386.57886686,
+        21390.079146  , 21393.57942514, 21397.07970429, 21400.57998343,
+        21404.08026257, 21407.58054172, 21411.08082086, 21414.5811    ,
+        21418.08137915, 21421.58165829, 21425.08193743, 21428.58221658,
+        21432.08249572, 21435.58277486, 21439.08305401, 21442.58333315,
+        21446.08361229, 21449.58389144, 21453.08417058, 21456.58444972,
+        21460.08472887, 21463.58500801, 21467.08528715, 21470.5855663 ,
+        21474.08584544, 21477.58612458, 21481.08640373, 21484.58668287,
+        21488.08696202, 21491.58724116, 21495.0875203 , 21498.58779945,
+        21502.08807859, 21505.58835773, 21509.08863688, 21512.58891602,
+        21516.08919516, 21519.58947431, 21523.08975345, 21526.59003259,
+        21530.09031174, 21533.59059088, 21537.09087002, 21540.59114917,
+        21544.09142831, 21547.59170745, 21551.0919866 , 21554.59226574,
+        21558.09254488, 21561.59282403, 21565.09310317, 21568.59338231,
+        21572.09366146, 21575.5939406 , 21579.09421975, 21582.59449889,
+        21586.09477803, 21589.59505718, 21593.09533632, 21596.59561546,
+        21600.09589461, 21603.59617375, 21607.09645289, 21610.59673204,
+        21614.09701118, 21617.59729032, 21621.09756947, 21624.59784861,
+        21628.09812775, 21631.5984069 , 21635.09868604, 21638.59896518,
+        21642.09924433, 21645.59952347, 21649.09980261, 21652.60008176,
+        21656.1003609 , 21659.60064004, 21663.10091919, 21666.60119833,
+        21670.10147747, 21673.60175662, 21677.10203576, 21680.60231491,
+        21684.10259405, 21687.60287319, 21691.10315234, 21694.60343148,
+        21698.10371062, 21701.60398977, 21705.10426891, 21708.60454805,
+        21712.1048272 , 21715.60510634, 21719.10538548, 21722.60566463,
+        21726.10594377, 21729.60622291, 21733.10650206, 21736.6067812 ,
+        21740.10706034, 21743.60733949, 21747.10761863, 21750.60789777,
+        21754.10817692, 21757.60845606, 21761.1087352 , 21764.60901435,
+        21768.10929349, 21771.60957263, 21775.10985178, 21778.61013092,
+        21782.11041007, 21785.61068921, 21789.11096835, 21792.6112475 ,
+        21796.11152664, 21799.61180578, 21803.11208493, 21806.61236407,
+        21810.11264321, 21813.61292236, 21817.1132015 , 21820.61348064,
+        21824.11375979, 21827.61403893, 21831.11431807, 21834.61459722,
+        21838.11487636, 21841.6151555 , 21845.11543465, 21848.61571379,
+        21852.11599293, 21855.61627208, 21859.11655122, 21862.61683036,
+        21866.11710951, 21869.61738865, 21873.11766779, 21876.61794694,
+        21880.11822608, 21883.61850523, 21887.11878437, 21890.61906351,
+        21894.11934266, 21897.6196218 , 21901.11990094, 21904.62018009,
+        21908.12045923, 21911.62073837, 21915.12101752, 21918.62129666,
+        21922.1215758 , 21925.62185495, 21929.12213409, 21932.62241323,
+        21936.12269238, 21939.62297152, 21943.12325066, 21946.62352981,
+        21950.12380895, 21953.62408809, 21957.12436724, 21960.62464638,
+        21964.12492552, 21967.62520467, 21971.12548381, 21974.62576295,
+        21978.1260421 , 21981.62632124, 21985.12660039, 21988.62687953,
+        21992.12715867, 21995.62743782, 21999.12771696, 22002.6279961 ,
+        22006.12827525, 22009.62855439, 22013.12883353, 22016.62911268,
+        22020.12939182, 22023.62967096, 22027.12995011, 22030.63022925,
+        22034.13050839, 22037.63078754, 22041.13106668, 22044.63134582,
+        22048.13162497, 22051.63190411, 22055.13218325, 22058.6324624 ,
+        22062.13274154, 22065.63302068, 22069.13329983, 22072.63357897,
+        22076.13385811, 22079.63413726, 22083.1344164 , 22086.63469555,
+        22090.13497469, 22093.63525383, 22097.13553298, 22100.63581212,
+        22104.13609126, 22107.63637041, 22111.13664955, 22114.63692869,
+        22118.13720784, 22121.63748698]),
+ array([-4.65440819e+02, -4.62418924e+02, -4.59397029e+02, -4.56375134e+02,
+        -4.53353239e+02, -4.50331343e+02, -4.47309448e+02, -4.44287553e+02,
+        -4.41265658e+02, -4.38243763e+02, -4.35221867e+02, -4.32199972e+02,
+        -4.29178077e+02, -4.26156182e+02, -4.23134287e+02, -4.20112391e+02,
+        -4.17090496e+02, -4.14068601e+02, -4.11046706e+02, -4.08024811e+02,
+        -4.05002915e+02, -4.01981020e+02, -3.98959125e+02, -3.95937230e+02,
+        -3.92915335e+02, -3.89893439e+02, -3.86871544e+02, -3.83849649e+02,
+        -3.80827754e+02, -3.77805859e+02, -3.74783963e+02, -3.71762068e+02,
+        -3.68740173e+02, -3.65718278e+02, -3.62696383e+02, -3.59674487e+02,
+        -3.56652592e+02, -3.53630697e+02, -3.50608802e+02, -3.47586907e+02,
+        -3.44565011e+02, -3.41543116e+02, -3.38521221e+02, -3.35499326e+02,
+        -3.32477431e+02, -3.29455535e+02, -3.26433640e+02, -3.23411745e+02,
+        -3.20389850e+02, -3.17367955e+02, -3.14346059e+02, -3.11324164e+02,
+        -3.08302269e+02, -3.05280374e+02, -3.02258479e+02, -2.99236583e+02,
+        -2.96214688e+02, -2.93192793e+02, -2.90170898e+02, -2.87149003e+02,
+        -2.84127107e+02, -2.81105212e+02, -2.78083317e+02, -2.75061422e+02,
+        -2.72039527e+02, -2.69017631e+02, -2.65995736e+02, -2.62973841e+02,
+        -2.59951946e+02, -2.56930051e+02, -2.53908155e+02, -2.50886260e+02,
+        -2.47864365e+02, -2.44842470e+02, -2.41820575e+02, -2.38798679e+02,
+        -2.35776784e+02, -2.32754889e+02, -2.29732994e+02, -2.26711099e+02,
+        -2.23689203e+02, -2.20667308e+02, -2.17645413e+02, -2.14623518e+02,
+        -2.11601623e+02, -2.08579727e+02, -2.05557832e+02, -2.02535937e+02,
+        -1.99514042e+02, -1.96492147e+02, -1.93470251e+02, -1.90448356e+02,
+        -1.87426461e+02, -1.84404566e+02, -1.81382671e+02, -1.78360775e+02,
+        -1.75338880e+02, -1.72316985e+02, -1.69295090e+02, -1.66273195e+02,
+        -1.63251300e+02, -1.60229404e+02, -1.57207509e+02, -1.54185614e+02,
+        -1.51163719e+02, -1.48141824e+02, -1.45119928e+02, -1.42098033e+02,
+        -1.39076138e+02, -1.36054243e+02, -1.33032348e+02, -1.30010452e+02,
+        -1.26988557e+02, -1.23966662e+02, -1.20944767e+02, -1.17922872e+02,
+        -1.14900976e+02, -1.11879081e+02, -1.08857186e+02, -1.05835291e+02,
+        -1.02813396e+02, -9.97915003e+01, -9.67696051e+01, -9.37477099e+01,
+        -9.07258147e+01, -8.77039195e+01, -8.46820243e+01, -8.16601291e+01,
+        -7.86382339e+01, -7.56163387e+01, -7.25944435e+01, -6.95725483e+01,
+        -6.65506531e+01, -6.35287579e+01, -6.05068627e+01, -5.74849675e+01,
+        -5.44630724e+01, -5.14411772e+01, -4.84192820e+01, -4.53973868e+01,
+        -4.23754916e+01, -3.93535964e+01, -3.63317012e+01, -3.33098060e+01,
+        -3.02879108e+01, -2.72660156e+01, -2.42441204e+01, -2.12222252e+01,
+        -1.82003300e+01, -1.51784348e+01, -1.21565396e+01, -9.13464437e+00,
+        -6.11274917e+00, -3.09085397e+00, -6.89587750e-02,  2.95293642e+00,
+         5.97483162e+00,  8.99672682e+00,  1.20186220e+01,  1.50405172e+01,
+         1.80624124e+01,  2.10843076e+01,  2.41062028e+01,  2.71280980e+01,
+         3.01499932e+01,  3.31718884e+01,  3.61937836e+01,  3.92156788e+01,
+         4.22375740e+01,  4.52594692e+01,  4.82813644e+01,  5.13032596e+01,
+         5.43251548e+01,  5.73470500e+01,  6.03689452e+01,  6.33908404e+01,
+         6.64127356e+01,  6.94346308e+01,  7.24565260e+01,  7.54784212e+01,
+         7.85003164e+01,  8.15222116e+01,  8.45441068e+01,  8.75660020e+01,
+         9.05878972e+01,  9.36097924e+01,  9.66316876e+01,  9.96535828e+01,
+         1.02675478e+02,  1.05697373e+02,  1.08719268e+02,  1.11741164e+02,
+         1.14763059e+02,  1.17784954e+02,  1.20806849e+02,  1.23828744e+02,
+         1.26850640e+02,  1.29872535e+02,  1.32894430e+02,  1.35916325e+02,
+         1.38938220e+02,  1.41960116e+02,  1.44982011e+02,  1.48003906e+02,
+         1.51025801e+02,  1.54047696e+02,  1.57069592e+02,  1.60091487e+02,
+         1.63113382e+02,  1.66135277e+02,  1.69157172e+02,  1.72179068e+02,
+         1.75200963e+02,  1.78222858e+02,  1.81244753e+02,  1.84266648e+02,
+         1.87288544e+02,  1.90310439e+02,  1.93332334e+02,  1.96354229e+02,
+         1.99376124e+02,  2.02398020e+02,  2.05419915e+02,  2.08441810e+02,
+         2.11463705e+02,  2.14485600e+02,  2.17507496e+02,  2.20529391e+02,
+         2.23551286e+02,  2.26573181e+02,  2.29595076e+02,  2.32616972e+02,
+         2.35638867e+02,  2.38660762e+02,  2.41682657e+02,  2.44704552e+02,
+         2.47726448e+02,  2.50748343e+02,  2.53770238e+02,  2.56792133e+02,
+         2.59814028e+02,  2.62835924e+02,  2.65857819e+02,  2.68879714e+02,
+         2.71901609e+02,  2.74923504e+02,  2.77945399e+02,  2.80967295e+02,
+         2.83989190e+02,  2.87011085e+02,  2.90032980e+02,  2.93054875e+02,
+         2.96076771e+02,  2.99098666e+02,  3.02120561e+02,  3.05142456e+02,
+         3.08164351e+02,  3.11186247e+02,  3.14208142e+02,  3.17230037e+02,
+         3.20251932e+02,  3.23273827e+02,  3.26295723e+02,  3.29317618e+02,
+         3.32339513e+02,  3.35361408e+02,  3.38383303e+02,  3.41405199e+02,
+         3.44427094e+02,  3.47448989e+02,  3.50470884e+02,  3.53492779e+02,
+         3.56514675e+02,  3.59536570e+02,  3.62558465e+02,  3.65580360e+02,
+         3.68602255e+02,  3.71624151e+02,  3.74646046e+02,  3.77667941e+02,
+         3.80689836e+02,  3.83711731e+02,  3.86733627e+02,  3.89755522e+02,
+         3.92777417e+02,  3.95799312e+02,  3.98821207e+02,  4.01843103e+02,
+         4.04864998e+02,  4.07886893e+02,  4.10908788e+02,  4.13930683e+02,
+         4.16952579e+02,  4.19974474e+02,  4.22996369e+02,  4.26018264e+02,
+         4.29040159e+02,  4.32062055e+02,  4.35083950e+02,  4.38105845e+02,
+         4.41127740e+02,  4.44149635e+02]),
+ &lt;matplotlib.collections.QuadMesh at 0x7fed1f385420&gt;)
+</code></pre></div>
+<p><img alt="png" src="../nextone_files/nextone_2_1.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>
+</span></code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../js/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+        
+      
+        
+          <script src="../../js/config.js"></script>
+        
+      
+    
+  </body>
+</html>

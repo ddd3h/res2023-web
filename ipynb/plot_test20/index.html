@@ -1,0 +1,1122 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Plot test20 - res2023-web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="res2023-web" class="md-header__button md-logo" aria-label="res2023-web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            res2023-web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Plot test20
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="res2023-web" class="md-nav__button md-logo" aria-label="res2023-web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    res2023-web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        ホーム
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../subhalo/" class="md-nav__link">
+        研究に用いるsubhalo一覧
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ddd3h/res2023-tex" class="md-nav__link">
+        卒論データ(GitHub)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          進捗報告
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          進捗報告
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../240110/" class="md-nav__link">
+        24.01.10 銀河団ミーティング
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../231204/" class="md-nav__link">
+        23.12.04 研究室ミーティング
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../231201/" class="md-nav__link">
+        23.12.01 銀河団ミーティング
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          コード関連
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          コード関連
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LINEnotify/" class="md-nav__link">
+        解析時間が長いので解析終了をLINEで通知させる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autobackup/" class="md-nav__link">
+        毎日自動バックアップを行い完了時にLINEに通知させる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shorten_extracting_time/" class="md-nav__link">
+        データの抽出時間をいかに短くするか
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Plot test20</h1>
+
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">import</span> <span class="nn">os</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">filelist</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;./AllOfData_CMVonly/&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">data_dict</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">filelist</span><span class="p">)):</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;./AllOfData_CMVonly/CMVonly_099.</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.npz&quot;</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">100000</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">data_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">num</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">num</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="n">num</span><span class="p">])</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;position_lite.pickle&quot;</span><span class="p">,</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data_dict</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">data_dict</span> <span class="o">=</span> <span class="p">{}</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;./AllOfData_CMVonly/CMVonly_099.0.npz&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="mi">1000</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">data_dict</span><span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">num</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">num</span><span class="p">],</span> <span class="n">z</span><span class="p">[</span><span class="n">num</span><span class="p">])</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>array([7301.99878463, 7320.61192041, 7279.09018712, 7402.66863673,
+       7265.9393641 , 7346.73676554, 7282.8601884 , 7293.27089141,
+       7331.47304841, 7332.88758026, 7288.45933058, 7368.52898057,
+       7382.33642287, 7242.93447104, 7358.23193866, 7333.90828724,
+       7385.69639895, 7406.52988425, 7338.14560013, 7273.28373231,
+       7320.62161034, 7265.50962824, 7386.81524895, 7382.68945627,
+       7430.05380194, 7270.7067645 , 7332.27850271, 7359.86649053,
+       7302.55514493, 7323.1619519 , 7373.35374557, 7346.7762355 ,
+       7318.06287535, 7341.42922435, 7319.13857411, 7383.92899633,
+       7244.61631588, 7305.40353224, 7279.17485139, 7300.97895323,
+       7285.06745177, 7285.71573703, 7240.35102167, 7264.00255344,
+       7292.89587832, 7409.75978738, 7338.29922136, 7399.6665349 ,
+       7222.14277835, 7318.89622288, 7379.8020096 , 7332.05761684,
+       7331.91453779, 7251.1748763 , 7230.00593003, 7288.79074209,
+       7325.81760248, 7277.64049009, 7352.58233613, 7274.16305532,
+       7297.42891473, 7411.82336364, 7300.63357731, 7304.91944629,
+       7263.85930234, 7242.67238156, 7343.34079187, 7364.63517823,
+       7267.35553703, 7371.00650402, 7307.12565584, 7334.37497151,
+       7270.94542618, 7306.09027926, 7298.87285797, 7270.8183071 ,
+       7269.53377079, 7355.3873684 , 7357.14621407, 7349.71865464,
+       7304.71533116, 7330.21090917, 7273.10655975, 7296.85867108,
+       7256.2603035 , 7249.73763996, 7351.84309113, 7309.03539968,
+       7331.42363677, 7374.67184057, 7337.95915582, 7357.8175988 ,
+       7302.89773896, 7370.47340751, 7352.94375351, 7325.73601103,
+       7309.37455961, 7304.38360383, 7309.94041055, 7378.89272912,
+       7354.76374839, 7265.95803685, 7351.24246707, 7218.26379056,
+       7285.19768515, 7308.63566187, 7319.90604547, 7242.39069728,
+       7312.4167854 , 7287.325423  , 7351.61115094, 7354.16519533,
+       7356.13012445, 7234.37522151, 7318.13346997, 7243.12693533,
+       7238.03048269, 7397.15190069, 7385.13704815, 7309.44911658,
+       7272.02629302, 7310.9328133 , 7297.8668711 , 7352.29839867,
+       7277.9570783 , 7280.46897378, 7298.41425076, 7376.324357  ,
+       7228.90698719, 7389.99256782, 7303.75460734, 7279.01131804,
+       7336.80064086, 7305.2279659 , 7366.58445334, 7260.45529734,
+       7293.55736752, 7274.14403806, 7340.638431  , 7301.13209469,
+       7295.14582347, 7388.08043352, 7256.57868304, 7272.6233715 ,
+       7403.38855562, 7305.85183545, 7279.65863153, 7322.5994301 ,
+       7328.21989708, 7391.63607546, 7318.384892  , 7252.97022015,
+       7309.21103052, 7390.73054313, 7340.56598712, 7399.2642406 ,
+       7322.77867901, 7284.35743397, 7280.68404923, 7291.87768916,
+       7340.00383964, 7326.59015619, 7305.01350849, 7352.48282329,
+       7302.47458644, 7370.04080655, 7365.45501925, 7362.76382518,
+       7252.95191894, 7376.85811967, 7324.90870682, 7282.06718097,
+       7305.01018024, 7279.4889756 , 7318.04305833, 7277.69472935,
+       7369.52796756, 7310.85867792, 7339.9303413 , 7310.07164907,
+       7289.03927259, 7244.71970245, 7356.26654543, 7283.41276228,
+       7301.67289713, 7230.13828195, 7264.96785957, 7270.85489721,
+       7313.27987789, 7384.56926686, 7289.32420835, 7374.81703495,
+       7389.19671207, 7316.51520889, 7282.89531964, 7274.38716781,
+       7243.12750848, 7355.40782564, 7385.15194017, 7262.81141407,
+       7295.39482552, 7314.29926424, 7262.95641279, 7288.98425774,
+       7345.86148189, 7320.05996348, 7295.10810964, 7369.40259051,
+       7366.95196697, 7259.75646151, 7389.5379831 , 7374.14817969,
+       7269.89606737, 7317.36657694, 7343.27706166, 7348.82380877,
+       7372.76593194, 7335.85334705, 7317.95241759, 7345.50754705,
+       7353.91604786, 7307.91784274, 7312.1251018 , 7382.1612335 ,
+       7287.40872055, 7375.91242624, 7316.66605134, 7315.35943442,
+       7284.98931734, 7269.19955625, 7280.21682103, 7338.36764784,
+       7297.47577209, 7218.41215903, 7330.17104785, 7254.70285108,
+       7324.05303688, 7337.68750147, 7298.62552465, 7292.86553338,
+       7270.85697797, 7366.69585258, 7364.90784683, 7284.40813731,
+       7345.35659998, 7316.33583515, 7311.8511747 , 7263.80811406,
+       7253.84330505, 7352.73521895, 7410.57378707, 7255.15185374,
+       7316.24752909, 7288.94604256, 7313.97216159, 7260.72657584,
+       7344.79587837, 7287.81196036, 7329.85495445, 7360.62207368,
+       7333.75113472, 7428.92997367, 7284.00455052, 7376.43809321,
+       7355.78457454, 7304.01389151, 7241.94666569, 7388.63976671,
+       7353.48035367, 7365.40885974, 7365.81735782, 7415.01807233,
+       7325.03257933, 7263.56263915, 7328.4509057 , 7355.31816582,
+       7220.78944723, 7240.04406794, 7309.28549515, 7345.98918101,
+       7309.01558541, 7354.43641166, 7304.09659271, 7362.71275193,
+       7415.09221533, 7363.55071627, 7344.89869196, 7315.67939162,
+       7257.92191833, 7263.29829174, 7275.17603043, 7386.27425074,
+       7231.19827178, 7276.63739168, 7226.96996079, 7421.01036157,
+       7326.6698004 , 7256.30089645, 7414.68045896, 7279.66383008,
+       7306.6968868 , 7321.77661996, 7249.96788352, 7283.20261354,
+       7357.93872548, 7270.88514576, 7301.02417196, 7299.08727979,
+       7241.7534119 , 7367.27380861, 7406.88919394, 7370.74987528,
+       7341.96928822, 7348.41282792, 7280.87302955, 7346.07981466,
+       7444.33940169, 7230.66823558, 7377.30628047, 7408.45944125,
+       7320.50205945, 7386.91601131, 7301.21084748, 7225.32687385,
+       7247.16797269, 7358.67076176, 7308.59721963, 7315.64404976,
+       7311.27513204, 7385.26514141, 7293.26091502, 7279.00466073,
+       7319.40488357, 7335.13009538, 7315.11952291, 7318.08935233,
+       7283.86653827, 7331.43400611, 7359.97396054, 7300.11259904,
+       7387.02124133, 7257.1660988 , 7329.05185821, 7327.4867824 ,
+       7393.39144166, 7309.8435421 , 7360.24286956, 7359.22020376,
+       7330.64310783, 7308.51679822, 7242.97151325, 7301.76032965,
+       7328.86141284, 7376.65869743, 7284.87808668, 7391.18869573,
+       7310.05257171, 7276.36507584, 7304.00490566, 7371.94215687,
+       7343.05906238, 7287.55084943, 7246.58942643, 7291.14972485,
+       7338.71680814, 7328.0937302 , 7258.74978556, 7274.98576178,
+       7314.13884325, 7346.97345284, 7317.67863645, 7255.95229069,
+       7290.17636215, 7285.54838139, 7411.58249096, 7361.52564105,
+       7382.90164454, 7229.75822924, 7343.59975099, 7327.09748253,
+       7341.16792895, 7317.11130787, 7329.08816342, 7414.61253956,
+       7340.89286844, 7342.23860182, 7277.66991138, 7319.96121443,
+       7300.97581983, 7234.59929675, 7249.02325607, 7424.36275458,
+       7357.0386956 , 7227.82979586, 7234.39548801, 7293.46566956,
+       7359.56481662, 7304.21716424, 7309.9553693 , 7363.66121357,
+       7406.83582943, 7287.6658839 , 7325.91652365, 7298.30746481,
+       7300.06142041, 7298.77532492, 7272.55750082, 7260.7731905 ,
+       7362.04017191, 7385.49327894, 7371.72684354, 7287.19207417,
+       7329.60513801, 7359.47644938, 7302.52515125, 7340.83917082,
+       7281.12238595, 7235.52157474, 7292.3772662 , 7334.25617386,
+       7314.29593134, 7336.46206968, 7416.25500511, 7259.06130964,
+       7345.35559094, 7256.18992492, 7313.89246675, 7321.49161702,
+       7285.21280516, 7281.27226703, 7308.51670172, 7328.52321679,
+       7226.22643861, 7284.02834912, 7311.52134085, 7267.56026238,
+       7382.59260743, 7344.43108259, 7387.52733489, 7287.48724401,
+       7249.89993168, 7354.60243318, 7276.1232448 , 7311.95445818,
+       7311.91586796, 7331.38917101, 7313.47196023, 7315.52479558,
+       7306.28682237, 7260.50521434, 7308.69903061, 7283.61240577,
+       7304.725765  , 7367.50622522, 7335.20125374, 7354.24847698,
+       7380.1311244 , 7323.27315109, 7376.80927561, 7333.5494601 ,
+       7289.59496894, 7369.74016916, 7238.00638803, 7256.64109308,
+       7294.40579237, 7246.37172402, 7288.95057419, 7376.00584344,
+       7240.91459325, 7369.91891426, 7370.36146021, 7298.05845284,
+       7233.6074569 , 7302.25177371, 7373.11090914, 7330.53578832,
+       7323.85756443, 7276.61361475, 7313.69721965, 7346.57725026,
+       7345.07747567, 7326.4146519 , 7364.03872061, 7330.71374386,
+       7371.61468306, 7301.61803597, 7291.44802963, 7338.73548054,
+       7286.36951858, 7354.70639028, 7255.04767179, 7416.96947001,
+       7310.0620776 , 7333.96668333, 7351.07952162, 7416.76859187,
+       7318.4988299 , 7341.23628645, 7356.65072487, 7371.88403324,
+       7238.90906547, 7232.47730663, 7346.22493727, 7307.86911982,
+       7286.14339463, 7266.64459398, 7265.44555225, 7398.15723011,
+       7277.173431  , 7342.16547803, 7319.30995973, 7378.30202731,
+       7319.61097062, 7369.2429108 , 7252.43178244, 7376.41383556,
+       7301.51545059, 7359.56908277, 7409.20201352, 7332.91846096,
+       7370.7848338 , 7284.29527606, 7299.23843035, 7254.30096912,
+       7252.40960416, 7336.48770618, 7322.34746972, 7373.07668398,
+       7282.81670193, 7239.15081476, 7294.01999148, 7291.630642  ,
+       7328.64576408, 7390.82833355, 7311.3559574 , 7332.61995302,
+       7288.57542583, 7335.15175929, 7267.83108993, 7254.43145676,
+       7202.88116195, 7316.44495685, 7286.30557536, 7342.97477989,
+       7272.67376217, 7291.50050626, 7301.86712906, 7262.97240542,
+       7314.7586734 , 7272.49589198, 7334.48262943, 7294.83513026,
+       7384.63541465, 7224.09644219, 7260.11972602, 7309.97458312,
+       7334.46590626, 7385.18460691, 7359.2600911 , 7325.12768512,
+       7372.69156043, 7366.36474226, 7280.7556527 , 7308.92014751,
+       7257.8520527 , 7303.82630849, 7382.19154728, 7382.79421674,
+       7221.08522798, 7299.43949076, 7318.57472588, 7244.28215101,
+       7287.63579493, 7379.72580203, 7307.53173323, 7335.20671619,
+       7298.88246514, 7429.57902643, 7315.78614702, 7321.15320656,
+       7362.90144777, 7289.67487237, 7355.4803595 , 7311.75526698,
+       7290.49854401, 7227.68213873, 7335.55875524, 7257.36296963,
+       7260.17932314, 7358.76506172, 7383.28044466, 7374.54349686,
+       7277.24078253, 7290.37163691, 7354.46414372, 7263.94535041,
+       7319.8872099 , 7323.41026619, 7390.02520674, 7317.05828867,
+       7379.37985474, 7412.77754988, 7355.1995014 , 7247.37965934,
+       7333.75281399, 7350.13052808, 7291.92242155, 7384.47424613,
+       7251.01469358, 7360.0090833 , 7274.31518983, 7300.40188652,
+       7335.89419415, 7324.01126275, 7353.56849383, 7310.73006152,
+       7393.01642727, 7299.63168548, 7382.29169896, 7301.63700649,
+       7305.68471256, 7332.40774796, 7263.43555629, 7320.44622489,
+       7386.01710553, 7279.00413603, 7335.04816189, 7318.98317533,
+       7302.88787932, 7301.30366122, 7414.06671879, 7292.2723727 ,
+       7372.61811508, 7382.23765657, 7413.02167543, 7286.66051013,
+       7360.00107426, 7376.22178945, 7248.07181064, 7271.57366627,
+       7311.96356165, 7297.49692144, 7346.75203752, 7256.23684551,
+       7250.09772507, 7325.26683085, 7334.62705357, 7257.33674204,
+       7302.70852365, 7350.07404624, 7337.07802003, 7337.09048826,
+       7308.26022412, 7337.88492331, 7331.70252806, 7302.16532961,
+       7357.20276084, 7280.94206484, 7285.17206677, 7397.53931634,
+       7333.36060182, 7318.49953943, 7305.79656677, 7333.26889404,
+       7336.36164823, 7267.7291416 , 7325.6603539 , 7376.30075232,
+       7342.82600027, 7278.15212911, 7330.47592299, 7327.7015412 ,
+       7361.6809314 , 7286.03590913, 7342.07721125, 7328.53947822,
+       7318.03776533, 7310.75322969, 7336.30125186, 7315.22720262,
+       7309.79381121, 7319.79814456, 7336.72628387, 7249.70180079,
+       7261.42814464, 7331.53868617, 7292.6324341 , 7353.84442655,
+       7274.99751177, 7242.9246106 , 7261.48860449, 7312.95648236,
+       7317.79363266, 7358.21866531, 7264.67624669, 7316.22917051,
+       7255.9068676 , 7258.50937897, 7321.67731847, 7323.77089724,
+       7252.32130573, 7302.87696748, 7361.05861382, 7341.66900415,
+       7392.71018254, 7288.7292678 , 7270.1984798 , 7382.05869947,
+       7335.29707719, 7334.77488207, 7341.82446274, 7393.69141653,
+       7333.52108033, 7318.61347427, 7351.10111884, 7326.71950718,
+       7312.45248253, 7264.06979422, 7316.73335639, 7374.06642244,
+       7343.73188642, 7244.76787272, 7265.66261426, 7242.89901849,
+       7374.26030036, 7260.36039339, 7323.30402802, 7234.38130755,
+       7273.72821063, 7293.43560892, 7420.42165513, 7322.14037469,
+       7285.94066427, 7346.01313491, 7326.55154914, 7357.62359982,
+       7286.86265151, 7300.35759288, 7341.10623714, 7291.35022278,
+       7315.77335424, 7265.49565154, 7312.57206126, 7395.57496438,
+       7284.06211626, 7363.03435097, 7343.33762455, 7287.97880782,
+       7362.59489271, 7354.84379656, 7303.39144264, 7333.11355757,
+       7356.19530197, 7331.59558714, 7309.42939059, 7427.19818002,
+       7268.79045781, 7301.77791324, 7333.85545219, 7362.93754194,
+       7243.5968682 , 7280.77981287, 7311.1959251 , 7346.43905118,
+       7355.44082866, 7248.41254962, 7273.34316612, 7371.99779878,
+       7326.57799742, 7313.82284528, 7287.53036253, 7308.64203846,
+       7307.35892182, 7365.1683029 , 7333.57062916, 7340.3315577 ,
+       7250.59356623, 7317.22016594, 7348.2000091 , 7406.03853518,
+       7387.53542378, 7301.32567449, 7292.01114383, 7261.63479442,
+       7372.74347144, 7305.18693348, 7363.78916866, 7224.35874463,
+       7329.66380425, 7380.02793847, 7231.10129851, 7252.51742089,
+       7344.5729574 , 7317.0787038 , 7290.21445703, 7339.53606435,
+       7333.01334013, 7256.10695141, 7342.11670702, 7272.70389698,
+       7403.20925249, 7268.81623439, 7292.00575791, 7262.11777573,
+       7239.18059899, 7337.53015104, 7372.27572392, 7294.81811942,
+       7245.54270026, 7278.33748567, 7313.69760519, 7345.06135878,
+       7277.07973951, 7349.03140293, 7285.44841368, 7295.73662254,
+       7252.66637936, 7296.2567406 , 7326.43084946, 7329.36539009,
+       7282.41069572, 7225.26179105, 7255.10267931, 7316.50856533,
+       7368.9898818 , 7247.87890228, 7241.12822954, 7260.95964422,
+       7337.78922276, 7253.38742458, 7329.70684759, 7276.43565496,
+       7415.69340253, 7289.55394446, 7271.66446403, 7390.75732868,
+       7392.40479727, 7369.7733355 , 7305.25287651, 7334.78022842,
+       7279.12618052, 7349.80309213, 7312.21956276, 7291.57861181,
+       7334.1835578 , 7231.28804854, 7299.39587141, 7260.12590673,
+       7309.46552048, 7352.73225366, 7303.89290399, 7306.05163426,
+       7284.10056152, 7357.47438305, 7281.22560553, 7317.23909403,
+       7307.95484917, 7251.88781525, 7341.14835155, 7285.32469984,
+       7242.7605347 , 7323.82647818, 7291.48728056, 7263.39444088,
+       7317.23076554, 7331.02072567, 7406.9833364 , 7300.01773514,
+       7314.8372961 , 7333.7213065 , 7343.21561516, 7295.51012796,
+       7284.76440409, 7258.07787649, 7251.09504387, 7355.12456311,
+       7275.60220987, 7312.18760363, 7340.76258609, 7321.18693332,
+       7294.51665137, 7338.56361257, 7343.62658459, 7369.36466943,
+       7392.21388931, 7276.04241538, 7301.09327598, 7358.40739566,
+       7355.75837049, 7266.94966283, 7297.31773081, 7381.94151194,
+       7321.62155655, 7331.29626954, 7275.71552706, 7297.94071979,
+       7240.39809384, 7334.16469061, 7296.07381531, 7304.04391307,
+       7401.6599895 , 7419.69254559, 7313.46276803, 7315.27976874,
+       7327.47790202, 7307.6392787 , 7385.10231157, 7320.03097076,
+       7299.78974669, 7330.88622265, 7353.53992478, 7351.91565433,
+       7315.04867747, 7289.14030354, 7383.91310951, 7269.64698072,
+       7270.59297422, 7324.02888969, 7240.67958084, 7375.12645938,
+       7372.72179383, 7341.55760752, 7296.499596  , 7278.57393175,
+       7389.96134565, 7349.28335667, 7368.97232304, 7394.12902405,
+       7330.85850235, 7331.0005583 , 7251.65484451, 7292.85672961,
+       7411.99866068, 7217.60340391, 7331.40852799, 7278.66810315,
+       7268.96907059, 7356.89037098, 7326.53361742, 7363.45737454,
+       7329.12416014, 7306.23791842, 7405.64296179, 7317.84544969,
+       7248.13750093, 7315.34763362, 7329.69094262, 7241.44531887,
+       7323.79239758, 7295.67147471, 7375.66621397, 7335.9315367 ,
+       7370.25539401, 7353.08742477, 7284.57154992, 7335.96211901,
+       7299.79225304, 7415.90892532, 7397.79229962, 7292.05039961,
+       7284.33813647, 7250.65768345, 7388.13324836, 7254.55588982,
+       7293.74732408, 7400.66600876, 7385.52505139, 7292.94490686,
+       7305.36719699, 7301.35280693, 7305.16517682, 7326.67159683,
+       7318.8174222 , 7330.16239559, 7334.27501053, 7345.26457476,
+       7288.16798067, 7224.20539989, 7304.67891371, 7329.08417778,
+       7336.57351244, 7327.02257882, 7334.29027709, 7351.14505677,
+       7277.33310032, 7264.77272778, 7291.28304758, 7273.33432228,
+       7276.66030389, 7235.63266325, 7260.57260189, 7323.2386142 ,
+       7386.55266575, 7233.55321999, 7253.62651566, 7235.75078023,
+       7323.39195832, 7266.45029254, 7353.64156327, 7255.78970497])
+</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">import</span> <span class="nn">pickle</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;position.pickle&quot;</span><span class="p">,</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">data_dict</span><span class="p">,</span><span class="n">f</span><span class="p">)</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="n">data_dict</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">cmx</span><span class="p">,</span> <span class="n">cmy</span><span class="p">,</span> <span class="n">cmz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">25045.18</span><span class="p">,</span> <span class="mf">5827.554</span><span class="p">,</span> <span class="mf">34187.434</span><span class="p">])</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">h</span> <span class="o">=</span> <span class="mf">0.6774</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">virial_radius</span> <span class="o">=</span> <span class="mf">194.9481</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">_virial_radius</span> <span class="o">=</span> <span class="n">virial_radius</span> <span class="o">*</span> <span class="n">h</span> <span class="o">*</span> <span class="mi">10</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">ok</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span> <span class="o">=</span> <span class="n">data_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">cmx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">cmy</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">z</span><span class="o">-</span><span class="n">cmz</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">_virial_radius</span><span class="p">:</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>        <span class="n">ok</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>        <span class="k">pass</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>81
+82
+115
+134
+146
+147
+148
+149
+150
+151
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+426
+427
+428
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+520
+536
+537
+540
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kn">import</span> <span class="nn">h5py</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">H</span><span class="p">,</span><span class="n">_H</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">He</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">He</span><span class="p">,</span><span class="n">_He</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">C</span><span class="p">,</span><span class="n">_C</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">N</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="n">_N</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="n">O</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">O</span><span class="p">,</span><span class="n">_O</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="n">Ne</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">Ne</span><span class="p">,</span><span class="n">_Ne</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="n">Mg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">Mg</span><span class="p">,</span><span class="n">_Mg</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="n">Si</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">Si</span><span class="p">,</span><span class="n">_Si</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="n">Fe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">Fe</span><span class="p">,</span><span class="n">_Fe</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="n">Total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">Total</span><span class="p">,</span><span class="n">_Total</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">m</span><span class="p">,</span><span class="n">_m</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">_x</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">y</span><span class="p">,</span><span class="n">_y</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">z</span><span class="p">,</span><span class="n">_z</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="n">vx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">vx</span><span class="p">,</span><span class="n">_vx</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="n">vy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">vy</span><span class="p">,</span><span class="n">_vy</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-16-17"><a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="n">vz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">vz</span><span class="p">,</span><span class="n">_vz</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>---------------------------------------------------------------------------
+
+IndexError                                Traceback (most recent call last)
+
+Cell In[65], line 1
+----&gt; 1 H = np.hstack((H,_H[r&lt;c_virial_radius]))
+      2 He = np.hstack((He,_He[r&lt;c_virial_radius]))
+      3 C = np.hstack((C,_C[r&lt;c_virial_radius]))
+
+
+IndexError: boolean index did not match indexed array along dimension 0; dimension is 12973120 but corresponding boolean dimension is 1000000
+</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">He</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="n">N</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">O</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="n">Ne</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="n">Mg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-8"><a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="n">Si</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-9"><a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="n">Fe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-10"><a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="n">Total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-11"><a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a><span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-12"><a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-13"><a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-14"><a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-15"><a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a><span class="n">vx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-16"><a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="n">vy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-17"><a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a><span class="n">vz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+</span><span id="__span-17-18"><a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>
+</span><span id="__span-17-19"><a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">ok</span><span class="p">:</span>
+</span><span id="__span-17-20"><a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>    <span class="k">with</span> <span class="n">h5py</span><span class="o">.</span><span class="n">File</span><span class="p">(</span> <span class="s2">&quot;/home/nishihama/data/TNG50-1/output/snapdir_099/&quot;</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;snap_099.</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">.hdf5&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-17-21"><a id="__codelineno-17-21" name="__codelineno-17-21" href="#__codelineno-17-21"></a>        <span class="n">_H</span><span class="p">,</span> <span class="n">_He</span><span class="p">,</span> <span class="n">_C</span><span class="p">,</span> <span class="n">_N</span><span class="p">,</span> <span class="n">_O</span><span class="p">,</span> <span class="n">_Ne</span><span class="p">,</span> <span class="n">_Mg</span><span class="p">,</span> <span class="n">_Si</span><span class="p">,</span> <span class="n">_Fe</span><span class="p">,</span> <span class="n">_Total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;PartType0&quot;</span><span class="p">][</span><span class="s2">&quot;GFM_Metals&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+</span><span id="__span-17-22"><a id="__codelineno-17-22" name="__codelineno-17-22" href="#__codelineno-17-22"></a>        <span class="n">_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;PartType0&quot;</span><span class="p">][</span><span class="s2">&quot;Masses&quot;</span><span class="p">])</span>
+</span><span id="__span-17-23"><a id="__codelineno-17-23" name="__codelineno-17-23" href="#__codelineno-17-23"></a>        <span class="n">_x</span><span class="p">,</span> <span class="n">_y</span><span class="p">,</span> <span class="n">_z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;PartType0&quot;</span><span class="p">][</span><span class="s2">&quot;Coordinates&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+</span><span id="__span-17-24"><a id="__codelineno-17-24" name="__codelineno-17-24" href="#__codelineno-17-24"></a>        <span class="n">_vx</span><span class="p">,</span> <span class="n">_vy</span><span class="p">,</span> <span class="n">_vz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="s2">&quot;PartType0&quot;</span><span class="p">][</span><span class="s2">&quot;Velocities&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">T</span>
+</span><span id="__span-17-25"><a id="__codelineno-17-25" name="__codelineno-17-25" href="#__codelineno-17-25"></a>        <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">_x</span><span class="o">-</span><span class="n">cmx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">_y</span><span class="o">-</span><span class="n">cmy</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">_z</span><span class="o">-</span><span class="n">cmz</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-17-26"><a id="__codelineno-17-26" name="__codelineno-17-26" href="#__codelineno-17-26"></a>        <span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">H</span><span class="p">,</span><span class="n">_H</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-27"><a id="__codelineno-17-27" name="__codelineno-17-27" href="#__codelineno-17-27"></a>        <span class="n">He</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">He</span><span class="p">,</span><span class="n">_He</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-28"><a id="__codelineno-17-28" name="__codelineno-17-28" href="#__codelineno-17-28"></a>        <span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">C</span><span class="p">,</span><span class="n">_C</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-29"><a id="__codelineno-17-29" name="__codelineno-17-29" href="#__codelineno-17-29"></a>        <span class="n">N</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">N</span><span class="p">,</span><span class="n">_N</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-30"><a id="__codelineno-17-30" name="__codelineno-17-30" href="#__codelineno-17-30"></a>        <span class="n">O</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">O</span><span class="p">,</span><span class="n">_O</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-31"><a id="__codelineno-17-31" name="__codelineno-17-31" href="#__codelineno-17-31"></a>        <span class="n">Ne</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">Ne</span><span class="p">,</span><span class="n">_Ne</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-32"><a id="__codelineno-17-32" name="__codelineno-17-32" href="#__codelineno-17-32"></a>        <span class="n">Mg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">Mg</span><span class="p">,</span><span class="n">_Mg</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-33"><a id="__codelineno-17-33" name="__codelineno-17-33" href="#__codelineno-17-33"></a>        <span class="n">Si</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">Si</span><span class="p">,</span><span class="n">_Si</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-34"><a id="__codelineno-17-34" name="__codelineno-17-34" href="#__codelineno-17-34"></a>        <span class="n">Fe</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">Fe</span><span class="p">,</span><span class="n">_Fe</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-35"><a id="__codelineno-17-35" name="__codelineno-17-35" href="#__codelineno-17-35"></a>        <span class="n">Total</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">Total</span><span class="p">,</span><span class="n">_Total</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-36"><a id="__codelineno-17-36" name="__codelineno-17-36" href="#__codelineno-17-36"></a>        <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">m</span><span class="p">,</span><span class="n">_m</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-37"><a id="__codelineno-17-37" name="__codelineno-17-37" href="#__codelineno-17-37"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">x</span><span class="p">,</span><span class="n">_x</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-38"><a id="__codelineno-17-38" name="__codelineno-17-38" href="#__codelineno-17-38"></a>        <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">y</span><span class="p">,</span><span class="n">_y</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-39"><a id="__codelineno-17-39" name="__codelineno-17-39" href="#__codelineno-17-39"></a>        <span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">z</span><span class="p">,</span><span class="n">_z</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-40"><a id="__codelineno-17-40" name="__codelineno-17-40" href="#__codelineno-17-40"></a>        <span class="n">vx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">vx</span><span class="p">,</span><span class="n">_vx</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-41"><a id="__codelineno-17-41" name="__codelineno-17-41" href="#__codelineno-17-41"></a>        <span class="n">vy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">vy</span><span class="p">,</span><span class="n">_vy</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-42"><a id="__codelineno-17-42" name="__codelineno-17-42" href="#__codelineno-17-42"></a>        <span class="n">vz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">vz</span><span class="p">,</span><span class="n">_vz</span><span class="p">[</span><span class="n">r</span><span class="o">&lt;</span><span class="n">c_virial_radius</span><span class="p">]))</span>
+</span><span id="__span-17-43"><a id="__codelineno-17-43" name="__codelineno-17-43" href="#__codelineno-17-43"></a>
+</span><span id="__span-17-44"><a id="__codelineno-17-44" name="__codelineno-17-44" href="#__codelineno-17-44"></a>
+</span><span id="__span-17-45"><a id="__codelineno-17-45" name="__codelineno-17-45" href="#__codelineno-17-45"></a><span class="n">np</span><span class="o">.</span><span class="n">savez</span><span class="p">(</span><span class="s2">&quot;almost.npz&quot;</span><span class="p">,</span><span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="p">,</span><span class="n">He</span><span class="o">=</span><span class="n">He</span><span class="p">,</span><span class="n">C</span><span class="o">=</span><span class="n">C</span><span class="p">,</span><span class="n">N</span><span class="o">=</span><span class="n">N</span><span class="p">,</span><span class="n">O</span><span class="o">=</span><span class="n">O</span><span class="p">,</span><span class="n">Ne</span><span class="o">=</span><span class="n">Ne</span><span class="p">,</span><span class="n">Mg</span><span class="o">=</span><span class="n">Mg</span><span class="p">,</span><span class="n">Si</span><span class="o">=</span><span class="n">Si</span><span class="p">,</span><span class="n">Fe</span><span class="o">=</span><span class="n">Fe</span><span class="p">,</span><span class="n">Total</span><span class="o">=</span><span class="n">Total</span><span class="p">,</span><span class="n">m</span><span class="o">=</span><span class="n">m</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="o">=</span><span class="n">z</span><span class="p">,</span><span class="n">vx</span><span class="o">=</span><span class="n">vx</span><span class="p">,</span><span class="n">vy</span><span class="o">=</span><span class="n">vy</span><span class="p">,</span><span class="n">vz</span><span class="o">=</span><span class="n">vz</span><span class="p">)</span>
+</span><span id="__span-17-46"><a id="__codelineno-17-46" name="__codelineno-17-46" href="#__codelineno-17-46"></a><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">H</span><span class="p">))</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>23245934
+</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s2">&quot;.&quot;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>[&lt;matplotlib.lines.Line2D at 0x7fb5503ac790&gt;]
+</code></pre></div>
+<p><img alt="png" src="../plot_test20_files/plot_test20_19_1.png" /></p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>
+</span></code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../js/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+        
+      
+        
+          <script src="../../js/config.js"></script>
+        
+      
+    
+  </body>
+</html>

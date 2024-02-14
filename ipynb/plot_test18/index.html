@@ -1,0 +1,1402 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.1, mkdocs-material-9.1.21">
+    
+    
+      
+        <title>Using Julia, extact the data - res2023-web</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#using-julia-extact-the-data" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="res2023-web" class="md-header__button md-logo" aria-label="res2023-web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            res2023-web
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Using Julia, extact the data
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="検索">
+        
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            検索を初期化
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="res2023-web" class="md-nav__button md-logo" aria-label="res2023-web" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    res2023-web
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        ホーム
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../subhalo/" class="md-nav__link">
+        研究に用いるsubhalo一覧
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/ddd3h/res2023-tex" class="md-nav__link">
+        卒論データ(GitHub)
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          進捗報告
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          進捗報告
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../240110/" class="md-nav__link">
+        24.01.10 銀河団ミーティング
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../231204/" class="md-nav__link">
+        23.12.04 研究室ミーティング
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../231201/" class="md-nav__link">
+        23.12.01 銀河団ミーティング
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          コード関連
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          コード関連
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../LINEnotify/" class="md-nav__link">
+        解析時間が長いので解析終了をLINEで通知させる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autobackup/" class="md-nav__link">
+        毎日自動バックアップを行い完了時にLINEに通知させる
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shorten_extracting_time/" class="md-nav__link">
+        データの抽出時間をいかに短くするか
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="using-julia-extact-the-data">Using Julia, extact the data</h1>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">using</span><span class="w"> </span><span class="n">NPZ</span>
+</span></code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">file_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readdir</span><span class="p">(</span><span class="s">&quot;./AllOfData_CMVonly&quot;</span><span class="p">,</span><span class="n">join</span><span class="o">=</span><span class="nb">true</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">file_list</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>680-element Vector{String}:
+ &quot;./AllOfData_CMVonly/CMVonly_099.0.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.1.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.10.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.100.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.101.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.102.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.103.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.104.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.105.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.106.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.107.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.108.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.109.npz&quot;
+ ⋮
+ &quot;./AllOfData_CMVonly/CMVonly_099.89.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.9.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.90.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.91.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.92.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.93.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.94.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.95.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.96.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.97.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.98.npz&quot;
+ &quot;./AllOfData_CMVonly/CMVonly_099.99.npz&quot;
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">npzread</span><span class="p">(</span><span class="w"> </span><span class="s">&quot;./AllOfData_CMVonly/&quot;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">file_list</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>Dict{String, Vector} with 7 entries:
+  &quot;vx&quot; =&gt; [7306.77, 7307.21, 7307.42, 7306.4, 7306.59, 7306.33, 7307.25, 7306.6…
+  &quot;vy&quot; =&gt; [24549.5, 24549.2, 24549.2, 24549.5, 24549.9, 24549.8, 24549.4, 24549…
+  &quot;m&quot;  =&gt; Float32[1.11801f-5, 8.85036f-6, 1.05112f-5, 8.2072f-6, 8.81124f-6, 8.…
+  &quot;x&quot;  =&gt; [7306.77, 7307.21, 7307.42, 7306.4, 7306.59, 7306.33, 7307.25, 7306.6…
+  &quot;z&quot;  =&gt; [21301.6, 21301.4, 21301.9, 21301.8, 21301.3, 21301.8, 21301.2, 21301…
+  &quot;vz&quot; =&gt; [21301.6, 21301.4, 21301.9, 21301.8, 21301.3, 21301.8, 21301.2, 21301…
+  &quot;y&quot;  =&gt; [24549.5, 24549.2, 24549.2, 24549.5, 24549.9, 24549.8, 24549.4, 24549…
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="s">&quot;x&quot;</span><span class="p">]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">_y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="s">&quot;y&quot;</span><span class="p">]</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">_z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="s">&quot;z&quot;</span><span class="p">]</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">_vx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="s">&quot;vx&quot;</span><span class="p">]</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">_vy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="s">&quot;vy&quot;</span><span class="p">]</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">_vz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="s">&quot;vz&quot;</span><span class="p">]</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">_m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">[</span><span class="s">&quot;m&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>12872848-element Vector{Float32}:
+ 1.118013f-5
+ 8.850358f-6
+ 1.0511189f-5
+ 8.207202f-6
+ 8.811245f-6
+ 8.286898f-6
+ 9.272063f-6
+ 8.958842f-6
+ 6.980509f-6
+ 9.220455f-6
+ 9.369337f-6
+ 9.403936f-6
+ 9.83156f-6
+ ⋮
+ 6.0934262f-6
+ 7.1299105f-6
+ 6.9957437f-6
+ 6.0758043f-6
+ 6.018157f-6
+ 5.7830603f-6
+ 6.672477f-6
+ 5.6115105f-6
+ 7.0961896f-6
+ 4.9884197f-6
+ 5.900126f-6
+ 5.1831144f-6
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">cmx</span><span class="p">,</span><span class="w"> </span><span class="n">cmy</span><span class="p">,</span><span class="w"> </span><span class="n">cmz</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">25045.18</span><span class="p">,</span><span class="w"> </span><span class="mf">5827.554</span><span class="p">,</span><span class="w"> </span><span class="mf">34187.434</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>(25045.18, 5827.554, 34187.434)
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="o">.</span><span class="p">((</span><span class="n">_x</span><span class="w"> </span><span class="o">.-</span><span class="w"> </span><span class="n">cmx</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="w"> </span><span class="o">.+</span><span class="w"> </span><span class="p">(</span><span class="n">_y</span><span class="w"> </span><span class="o">.-</span><span class="w"> </span><span class="n">cmy</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="w"> </span><span class="o">.+</span><span class="w"> </span><span class="p">(</span><span class="n">_z</span><span class="w"> </span><span class="o">.-</span><span class="w"> </span><span class="n">cmz</span><span class="p">)</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>12872848-element Vector{Float64}:
+ 28830.670580522896
+ 28830.272567713822
+ 28829.932812373547
+ 28830.830593730818
+ 28831.147814755972
+ 28831.055909390634
+ 28830.514580826744
+ 28830.9787496095
+ 28830.665431610825
+ 28830.19243855919
+ 28830.514144867502
+ 28831.15899574924
+ 28829.678765137363
+     ⋮
+ 28732.934210727974
+ 28772.352691061336
+ 28865.822863619615
+ 28805.085929290675
+ 28757.414596686955
+ 28857.333022279217
+ 28787.672909108594
+ 28845.356513972027
+ 28863.658638485667
+ 28858.532455312437
+ 28784.914504449378
+ 28795.231122856312
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">z</span><span class="p">,</span><span class="w"> </span><span class="n">vx</span><span class="p">,</span><span class="w"> </span><span class="n">vy</span><span class="p">,</span><span class="w"> </span><span class="n">vz</span><span class="p">,</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Float64</span><span class="p">[],</span><span class="w"> </span><span class="kt">Float64</span><span class="p">[],</span><span class="w"> </span><span class="kt">Float64</span><span class="p">[],</span><span class="w"> </span><span class="kt">Float64</span><span class="p">[],</span><span class="w"> </span><span class="kt">Float64</span><span class="p">[],</span><span class="w"> </span><span class="kt">Float64</span><span class="p">[],</span><span class="w"> </span><span class="kt">Float64</span><span class="p">[]</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>(Float64[], Float64[], Float64[], Float64[], Float64[], Float64[], Float64[])
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Float64</span><span class="p">[</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">2.0</span><span class="p">]</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">a</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>2-element Vector{Float64}:
+ 1.0
+ 2.0
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">_x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_x</span><span class="p">[</span><span class="n">r</span><span class="w"> </span><span class="o">.&lt;</span><span class="w"> </span><span class="mi">1000</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>BoundsError: attempt to access 0-element Vector{Float64} at index [12872848-element BitVector]
+
+
+
+Stacktrace:
+
+ [1] throw_boundserror(A::Vector{Float64}, I::Tuple{Base.LogicalIndex{Int64, BitVector}})
+
+   @ Base ./abstractarray.jl:744
+
+ [2] checkbounds
+
+   @ ./abstractarray.jl:709 [inlined]
+
+ [3] _getindex
+
+   @ ./multidimensional.jl:860 [inlined]
+
+ [4] getindex(A::Vector{Float64}, I::BitVector)
+
+   @ Base ./abstractarray.jl:1294
+
+ [5] top-level scope
+
+   @ In[36]:1
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">x</span><span class="o">=</span><span class="n">vcat</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">_x</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>Float64[]
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vcat</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>2-element Vector{Float64}:
+ 1.0
+ 2.0
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">function</span><span class="w"> </span><span class="n">load_data</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">npzread</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">data</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">end</span>
+</span></code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">using</span><span class="w"> </span><span class="n">HDF5</span>
+</span></code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">basePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/home/nishihama/data/TNG50-1/output/snapdir_099/&quot;</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>&quot;/home/nishihama/data/TNG50-1/output/snapdir_099/&quot;
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">h5open</span><span class="p">(</span><span class="n">basePath</span><span class="o">*</span><span class="s">&quot;snap_099.0.hdf5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;r&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>🗂️ HDF5.File: (read-only) /home/nishihama/data/TNG50-1/output/snapdir_099/snap_099.0.hdf5
+├─ 📂 Config
+│  ├─ 🏷️ ADAPTIVE_HYDRO_SOFTENING
+│  ├─ 🏷️ ALLOW_DIRECT_SUMMATION
+│  ├─ 🏷️ BH_ADIOS_ONLY_ABOVE_MINIMUM_DENSITY
+│  ├─ 🏷️ BH_ADIOS_RANDOMIZED
+│  ├─ 🏷️ BH_ADIOS_WIND
+│  ├─ 🏷️ BH_ADIOS_WIND_WITH_QUASARTHRESHOLD
+│  ├─ 🏷️ BH_ADIOS_WIND_WITH_VARIABLE_QUASARTHRESHOLD
+│  ├─ 🏷️ BH_BONDI_DEFAULT
+│  ├─ 🏷️ BH_DO_NOT_PREVENT_MERGERS
+│  ├─ 🏷️ BH_EXACT_INTEGRATION
+│  ├─ 🏷️ BH_NEW_CENTERING
+│  ├─ 🏷️ BH_PRESSURE_CRITERION
+│  ├─ 🏷️ BH_THERMALFEEDBACK
+│  ├─ 🏷️ BH_USE_ALFVEN_SPEED_IN_BONDI
+│  ├─ 🏷️ BLACK_HOLES
+│  ├─ 🏷️ CELL_CENTER_GRAVITY
+│  ├─ 🏷️ CHECKSUM_DEBUG
+│  ├─ 🏷️ CHUNKING
+│  ├─ 🏷️ COOLING
+│  ├─ 🏷️ DEBUG
+│  ├─ 🏷️ DIRECT_SUMMATION_THRESHOLD
+│  ├─ 🏷️ DOUBLEPRECISION
+│  ├─ 🏷️ DOUBLEPRECISION_FFTW
+│  ├─ 🏷️ DRAINGAS
+│  ├─ 🏷️ ENFORCE_JEANS_STABILITY_OF_CELLS
+│  └─ (88 more children)
+├─ 📂 Header
+│  ├─ 🏷️ BoxSize
+│  ├─ 🏷️ Composition_vector_length
+│  ├─ 🏷️ Flag_Cooling
+│  ├─ 🏷️ Flag_DoublePrecision
+│  ├─ 🏷️ Flag_Feedback
+│  ├─ 🏷️ Flag_Metals
+│  ├─ 🏷️ Flag_Sfr
+│  ├─ 🏷️ Flag_StellarAge
+│  ├─ 🏷️ Git_commit
+│  ├─ 🏷️ Git_date
+│  ├─ 🏷️ HubbleParam
+│  ├─ 🏷️ MassTable
+│  ├─ 🏷️ NumFilesPerSnapshot
+│  ├─ 🏷️ NumPart_ThisFile
+│  ├─ 🏷️ NumPart_Total
+│  ├─ 🏷️ NumPart_Total_HighWord
+│  ├─ 🏷️ Omega0
+│  ├─ 🏷️ OmegaBaryon
+│  ├─ 🏷️ OmegaLambda
+│  ├─ 🏷️ Redshift
+│  ├─ 🏷️ Time
+│  ├─ 🏷️ UnitLength_in_cm
+│  ├─ 🏷️ UnitMass_in_g
+│  └─ 🏷️ UnitVelocity_in_cm_per_s
+├─ 📂 Parameters
+│  ├─ 🏷️ AGB_MassTransferOn
+│  ├─ 🏷️ ActivePartFracForNewDomainDecomp
+│  ├─ 🏷️ AdaptiveHydroSofteningSpacing
+│  ├─ 🏷️ BlackHoleAccretionFactor
+│  ├─ 🏷️ BlackHoleCenteringMassMultiplier
+│  ├─ 🏷️ BlackHoleEddingtonFactor
+│  ├─ 🏷️ BlackHoleFeedbackFactor
+│  ├─ 🏷️ BlackHoleMaxAccretionRadius
+│  ├─ 🏷️ BlackHoleRadiativeEfficiency
+│  ├─ 🏷️ BoxSize
+│  ├─ 🏷️ CellMaxAngleFactor
+│  ├─ 🏷️ CellShapingSpeed
+│  ├─ 🏷️ ComovingIntegrationOn
+│  ├─ 🏷️ CoolingOn
+│  ├─ 🏷️ CoolingTablePath
+│  ├─ 🏷️ CourantFac
+│  ├─ 🏷️ CpuTimeBetRestartFile
+│  ├─ 🏷️ CritOverDensity
+│  ├─ 🏷️ CritPhysDensity
+│  ├─ 🏷️ DerefinementCriterion
+│  ├─ 🏷️ DesLinkNgb
+│  ├─ 🏷️ DesNumNgb
+│  ├─ 🏷️ DesNumNgbBlackHole
+│  ├─ 🏷️ DesNumNgbEnrichment
+│  ├─ 🏷️ ErrTolForceAcc
+│  └─ (127 more children)
+├─ 📂 PartType0
+│  ├─ 🔢 CenterOfMass
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 Coordinates
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 Density
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 ElectronAbundance
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 EnergyDissipation
+│  ├─ 🔢 GFM_AGNRadiation
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 GFM_CoolingRate
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 GFM_Metallicity
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 GFM_Metals
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 GFM_MetalsTagged
+│  ├─ 🔢 GFM_WindDMVelDisp
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 GFM_WindHostHaloMass
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 InternalEnergy
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 InternalEnergyOld
+│  ├─ 🔢 Machnumber
+│  ├─ 🔢 MagneticField
+│  ├─ 🔢 MagneticFieldDivergence
+│  ├─ 🔢 Masses
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 NeutralHydrogenAbundance
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 ParticleIDs
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 Potential
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 StarFormationRate
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 SubfindDMDensity
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 SubfindDensity
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 SubfindHsml
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  └─ (2 more children)
+├─ 📂 PartType1
+│  ├─ 🔢 Coordinates
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 ParticleIDs
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 Potential
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 SubfindDMDensity
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 SubfindDensity
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 SubfindHsml
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 SubfindVelDisp
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  └─ 🔢 Velocities
+│     ├─ 🏷️ a_scaling
+│     ├─ 🏷️ h_scaling
+│     ├─ 🏷️ length_scaling
+│     ├─ 🏷️ mass_scaling
+│     ├─ 🏷️ to_cgs
+│     └─ 🏷️ velocity_scaling
+├─ 📂 PartType3
+│  ├─ 🔢 ParentID
+│  └─ 🔢 TracerID
+├─ 📂 PartType4
+│  ├─ 🔢 BirthPos
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 BirthVel
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 Coordinates
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 GFM_InitialMass
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 GFM_Metallicity
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 GFM_Metals
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 GFM_MetalsTagged
+│  ├─ 🔢 GFM_StellarFormationTime
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 GFM_StellarPhotometrics
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 Masses
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 ParticleIDs
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 Potential
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 StellarHsml
+│  ├─ 🔢 SubfindDMDensity
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 SubfindDensity
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 SubfindHsml
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  ├─ 🔢 SubfindVelDisp
+│  │  ├─ 🏷️ a_scaling
+│  │  ├─ 🏷️ h_scaling
+│  │  ├─ 🏷️ length_scaling
+│  │  ├─ 🏷️ mass_scaling
+│  │  ├─ 🏷️ to_cgs
+│  │  └─ 🏷️ velocity_scaling
+│  └─ 🔢 Velocities
+│     ├─ 🏷️ a_scaling
+│     ├─ 🏷️ h_scaling
+│     ├─ 🏷️ length_scaling
+│     ├─ 🏷️ mass_scaling
+│     ├─ 🏷️ to_cgs
+│     └─ 🏷️ velocity_scaling
+└─ 📂 PartType5
+   ├─ 🔢 BH_BPressure
+   ├─ 🔢 BH_CumEgyInjection_QM
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 BH_CumEgyInjection_RM
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 BH_CumMassGrowth_QM
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 BH_CumMassGrowth_RM
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 BH_Density
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 BH_HostHaloMass
+   ├─ 🔢 BH_Hsml
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 BH_Mass
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 BH_Mdot
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 BH_MdotBondi
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 BH_MdotEddington
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 BH_Pressure
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 BH_Progs
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 BH_U
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 Coordinates
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 Masses
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 ParticleIDs
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 Potential
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 SubfindDMDensity
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 SubfindDensity
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 SubfindHsml
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   ├─ 🔢 SubfindVelDisp
+   │  ├─ 🏷️ a_scaling
+   │  ├─ 🏷️ h_scaling
+   │  ├─ 🏷️ length_scaling
+   │  ├─ 🏷️ mass_scaling
+   │  ├─ 🏷️ to_cgs
+   │  └─ 🏷️ velocity_scaling
+   └─ 🔢 Velocities
+      ├─ 🏷️ a_scaling
+      ├─ 🏷️ h_scaling
+      ├─ 🏷️ length_scaling
+      ├─ 🏷️ mass_scaling
+      ├─ 🏷️ to_cgs
+      └─ 🏷️ velocity_scaling
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">typeof</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>HDF5.File
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">Coordinates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="s">&quot;PartType0/Coordinates&quot;</span><span class="p">])</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coordinates</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">:</span><span class="p">]</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coordinates</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="o">:</span><span class="p">]</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="n">z</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Coordinates</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="o">:</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>12872848-element Vector{Float64}:
+ 21301.621614212567
+ 21301.44623573546
+ 21301.871730014285
+ 21301.77966047599
+ 21301.2958697167
+ 21301.800650880323
+ 21301.196899327155
+ 21301.13949542579
+ 21301.48569039526
+ 21301.55628402768
+ 21301.058739879365
+ 21300.909227444914
+ 21301.75815608971
+     ⋮
+ 21334.38420955627
+ 21449.389067350385
+ 21253.28742335633
+ 21345.69375888562
+ 21366.35060476004
+ 21355.138197526263
+ 21363.64527813693
+ 21358.844309368174
+ 21397.111350485742
+ 21257.768264277398
+ 21425.743122730793
+ 21357.241121859945
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="n">x</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>12872848-element Vector{Float64}:
+ 7306.769235765333
+ 7307.2124090287425
+ 7307.415347402381
+ 7306.403381132108
+ 7306.586857686929
+ 7306.325072189271
+ 7307.245203803558
+ 7306.644416397463
+ 7306.5976199623265
+ 7307.040755688511
+ 7307.101844301448
+ 7306.634472484612
+ 7307.7711758115065
+    ⋮
+ 7405.082648961636
+ 7337.371448261559
+ 7264.415609568726
+ 7381.791664471166
+ 7380.878467220149
+ 7240.99887609739
+ 7285.303118812163
+ 7242.207148013659
+ 7232.201445629566
+ 7255.605551922475
+ 7363.324168919338
+ 7387.990259941544
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">file_list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">readdir</span><span class="p">(</span><span class="s">&quot;../data/TNG50-1/output/snapdir_099/&quot;</span><span class="p">,</span><span class="n">join</span><span class="o">=</span><span class="nb">true</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>680-element Vector{String}:
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.0.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.1.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.10.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.100.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.101.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.102.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.103.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.104.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.105.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.106.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.107.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.108.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.109.hdf5&quot;
+ ⋮
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.89.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.9.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.90.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.91.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.92.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.93.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.94.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.95.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.96.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.97.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.98.hdf5&quot;
+ &quot;../data/TNG50-1/output/snapdir_099/snap_099.99.hdf5&quot;
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">matrix</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="p">;</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">9</span><span class="p">]</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">vector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vec</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>9-element Vector{Int64}:
+ 1
+ 4
+ 7
+ 2
+ 5
+ 8
+ 3
+ 6
+ 9
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">Coordinates</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="s">&quot;PartType0/Coordinates&quot;</span><span class="p">])</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">size</span><span class="p">(</span><span class="n">Coordinates</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>3
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">Density</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read</span><span class="p">(</span><span class="n">file</span><span class="p">[</span><span class="s">&quot;PartType0/Density&quot;</span><span class="p">])</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>12872848-element Vector{Float32}:
+ 0.00012316783
+ 0.00012689516
+ 8.354161f-5
+ 0.00014805542
+ 0.00012719374
+ 0.00013912962
+ 0.00011109029
+ 0.00015977668
+ 0.00015269681
+ 0.000108999855
+ 0.00013934204
+ 0.00016707514
+ 8.940165f-5
+ ⋮
+ 1.3497948f-5
+ 1.0638034f-5
+ 1.5785386f-5
+ 1.3158952f-5
+ 1.2937124f-5
+ 1.516287f-5
+ 1.3814832f-5
+ 1.4650996f-5
+ 1.217901f-5
+ 1.6173537f-5
+ 1.1508846f-5
+ 1.2338002f-5
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">Coordinates</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>3×12872848 Matrix{Float64}:
+  7306.77   7307.21   7307.42   7306.4  …   7255.61   7363.32   7387.99
+ 24549.5   24549.2   24549.2   24549.5     24513.6   24617.5   24609.9
+ 21301.6   21301.4   21301.9   21301.8     21257.8   21425.7   21357.2
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">data</span><span class="o">::</span><span class="kt">Dict</span><span class="p">{</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">Float64</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">Dict</span><span class="p">{</span><span class="kt">String</span><span class="p">,</span><span class="w"> </span><span class="kt">Float64</span><span class="p">}()</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="n">typeof</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>cannot set type for global data. It already has a value or is already set to a different type.
+
+
+
+Stacktrace:
+
+ [1] top-level scope
+
+   @ In[35]:1
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">function</span><span class="w"> </span><span class="n">cc</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="k">end</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>cc (generic function with 1 method)
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="n">cc</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="n">a</span>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>3-element Vector{Int64}:
+ 6
+ 2
+ 3
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code>LoadError: MethodError: no method matching var&quot;@time&quot;(::LineNumberNode, ::Module)
+
+Closest candidates are:
+  var&quot;@time&quot;(::LineNumberNode, ::Module, ::Any)
+   @ Base timing.jl:261
+  var&quot;@time&quot;(::LineNumberNode, ::Module, ::Any, ::Any)
+   @ Base timing.jl:266
+
+in expression starting at In[39]:1
+</code></pre></div>
+<div class="language-julia highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>
+</span></code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.expand", "content.code.copy", "content.code.select", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../js/mathjax.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+        
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+        
+      
+        
+          <script src="../../js/config.js"></script>
+        
+      
+    
+  </body>
+</html>
